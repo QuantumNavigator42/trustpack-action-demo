@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TrustPack Evidence Pack</title>
+    <style>
+      :root { color-scheme: light; --ink: #172033; --muted: #5c667a; --line: #d9dee8; --panel: #ffffff; --page: #f5f7fb; --blue: #2446a6; --green: #1f7a4d; --amber: #986600; --red: #b3261e; --gray: #566070; }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--page); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.5; }
+      main { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 40px 0; }
+      header { margin-bottom: 24px; }
+      h1 { margin: 0; font-size: 36px; line-height: 1.15; letter-spacing: 0; }
+      h2 { margin: 0 0 14px; font-size: 20px; letter-spacing: 0; }
+      .eyebrow { margin: 0 0 8px; color: var(--blue); font-weight: 700; text-transform: uppercase; font-size: 12px; }
+      .lede { margin: 12px 0 0; color: var(--muted); font-size: 17px; }
+      .grid { display: grid; gap: 12px; margin-bottom: 16px; }
+      .facts { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+      .metrics { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+      .card, .panel, .disclaimer { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
+      .card span { display: block; color: var(--muted); font-size: 13px; }
+      .card strong { display: block; margin-top: 4px; overflow-wrap: anywhere; font-size: 16px; }
+      .metric strong { font-size: 28px; }
+      .metric small { display: block; color: var(--muted); }
+      .panel, .disclaimer { margin-top: 16px; overflow-x: auto; }
+      table { width: 100%; border-collapse: collapse; min-width: 720px; }
+      th, td { padding: 10px 8px; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
+      th { color: var(--muted); font-size: 13px; }
+      .badge { display: inline-block; border-radius: 999px; padding: 2px 8px; color: #ffffff; background: var(--gray); font-size: 12px; font-weight: 700; white-space: nowrap; }
+      .badge.pass, .badge.success { background: var(--green); }
+      .badge.warning, .badge.partial, .badge.unknown { background: var(--amber); }
+      .badge.fail, .badge.failed, .badge.error { background: var(--red); }
+      .badge.not-applicable, .badge.skipped { background: var(--gray); }
+      .reports { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 8px 16px; margin: 0; padding-left: 20px; }
+      a { color: var(--blue); }
+      .empty, .disclaimer p { color: var(--muted); margin: 0; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">TrustPack Evidence Pack</p>
+        <h1>TrustPack Demo - TrustPack Action</h1>
+        <p class="lede">Repository-level security evidence for QuantumNavigator42/trustpack-action-demo.</p>
+      </header>
+
+      <section class="grid facts" aria-label="Repository context">
+        <article class="card">
+          <span>Repository</span>
+          <strong>QuantumNavigator42/trustpack-action-demo</strong>
+        </article>
+        <article class="card">
+          <span>Default branch</span>
+          <strong>main</strong>
+        </article>
+        <article class="card">
+          <span>Visibility</span>
+          <strong>public</strong>
+        </article>
+        <article class="card">
+          <span>Generated</span>
+          <strong>2026-05-24T00:39:45.924Z</strong>
+        </article>
+      </section>
+
+      <section class="grid metrics" aria-label="Evidence snapshot">
+        <article class="card metric">
+          <span>Evidence streams</span>
+          <strong>6</strong>
+          <small>5 success, 1 partial, 0 failed</small>
+        </article>
+        <article class="card metric">
+          <span>Findings</span>
+          <strong>18</strong>
+          <small>1 warning, 0 fail, 0 error</small>
+        </article>
+        <article class="card metric">
+          <span>Action items</span>
+          <strong>3</strong>
+          <small>Warnings, failures, errors, and review items</small>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Evidence Streams</h2>
+        <table>
+          <thead><tr><th>Evidence</th><th>Status</th><th>Summary</th></tr></thead>
+          <tbody>
+            <tr><td>Repository metadata</td><td><span class="badge success">success</span></td><td>Collected metadata for QuantumNavigator42/trustpack-action-demo.</td></tr>
+            <tr><td>Branch protection</td><td><span class="badge partial">partial</span></td><td>Collected branch protection evidence for QuantumNavigator42/trustpack-action-demo@main.</td></tr>
+            <tr><td>Repository files</td><td><span class="badge success">success</span></td><td>Detected 5 of 5 expected repository file evidence item(s).</td></tr>
+            <tr><td>Dependencies</td><td><span class="badge success">success</span></td><td>Detected 1 dependency file(s) across 1 ecosystem(s).</td></tr>
+            <tr><td>Workflow parser</td><td><span class="badge success">success</span></td><td>Parsed 1 workflow file(s).</td></tr>
+            <tr><td>Workflow risks</td><td><span class="badge success">success</span></td><td>Detected 1 workflow risk finding(s).</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="panel">
+        <h2>Buyer-Visible Controls</h2>
+        <table>
+          <thead><tr><th>Control</th><th>Status</th><th>Evidence</th></tr></thead>
+          <tbody>
+            <tr><td>Default branch protection</td><td><span class="badge unknown">unknown</span></td><td>Branch protection could not be collected for main.</td></tr>
+            <tr><td>Repository rulesets</td><td><span class="badge unknown">unknown</span></td><td>No repository rulesets were returned by the GitHub API.</td></tr>
+            <tr><td>CODEOWNERS</td><td><span class="badge pass">pass</span></td><td>CODEOWNERS found at .github/CODEOWNERS.</td></tr>
+            <tr><td>Security policy</td><td><span class="badge pass">pass</span></td><td>SECURITY.md found at SECURITY.md.</td></tr>
+            <tr><td>Dependabot</td><td><span class="badge pass">pass</span></td><td>Dependabot configuration found at .github/dependabot.yml.</td></tr>
+            <tr><td>License file</td><td><span class="badge pass">pass</span></td><td>License file found at LICENSE.</td></tr>
+            <tr><td>Workflow risks</td><td><span class="badge success">success</span></td><td>1 workflow risk finding(s) detected.</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="panel">
+        <h2>Actionable Findings</h2>
+        <table>
+          <thead><tr><th>Severity</th><th>Finding</th><th>Status</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>medium</td><td>Action reference is not pinned to a commit SHA</td><td><span class="badge warning">warning</span></td><td>Pin third-party action references to a full 40-character commit SHA.</td></tr>
+            <tr><td>medium</td><td>Default branch protection</td><td><span class="badge unknown">unknown</span></td><td>Configure branch protection or repository rulesets for the default branch.</td></tr>
+            <tr><td>info</td><td>Repository rulesets</td><td><span class="badge unknown">unknown</span></td><td>Consider repository rulesets if branch protection is not sufficient.</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="panel">
+        <h2>Report Files</h2>
+        <ul class="reports">
+          <li><a href="./executive-summary.md">executive-summary.md</a></li>
+          <li><a href="./repository-evidence.json">repository-evidence.json</a></li>
+          <li><a href="./security-controls.md">security-controls.md</a></li>
+          <li><a href="./vendor-security-questionnaire.md">vendor-security-questionnaire.md</a></li>
+          <li><a href="./dependency-inventory.md">dependency-inventory.md</a></li>
+          <li><a href="./open-source-license-notices.md">open-source-license-notices.md</a></li>
+          <li><a href="./github-actions-risk-report.md">github-actions-risk-report.md</a></li>
+          <li><a href="./remediation-checklist.md">remediation-checklist.md</a></li>
+        </ul>
+      </section>
+
+      <section class="disclaimer">
+        <h2>Limitations</h2>
+        <p>TrustPack helps collect repository-level security evidence. It is not legal, audit, or compliance certification.</p>
+      </section>
+    </main>
+  </body>
+</html>

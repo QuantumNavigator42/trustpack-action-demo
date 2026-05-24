@@ -1,0 +1,842 @@
+{
+  "schemaVersion": "0.1.0-scaffold",
+  "generatedAt": "2026-05-24T00:39:45.924Z",
+  "repository": {
+    "owner": "QuantumNavigator42",
+    "name": "trustpack-action-demo",
+    "fullName": "QuantumNavigator42/trustpack-action-demo",
+    "defaultBranch": "main",
+    "visibility": "public"
+  },
+  "inputs": {
+    "outputDir": "trustpack",
+    "companyName": "TrustPack Demo",
+    "productName": "TrustPack Action",
+    "includeHtml": true,
+    "failOnHighRiskWorkflows": false
+  },
+  "collectors": {
+    "repository-metadata": {
+      "collector": "repository-metadata",
+      "status": "success",
+      "summary": "Collected metadata for QuantumNavigator42/trustpack-action-demo.",
+      "data": {
+        "repository": {
+          "id": 1247920149,
+          "owner": "QuantumNavigator42",
+          "name": "trustpack-action-demo",
+          "fullName": "QuantumNavigator42/trustpack-action-demo",
+          "htmlUrl": "https://github.com/QuantumNavigator42/trustpack-action-demo",
+          "defaultBranch": "main",
+          "private": false,
+          "visibility": "public",
+          "archived": false,
+          "disabled": false,
+          "fork": false,
+          "description": "Demo repository for TrustPack Action",
+          "createdAt": "2026-05-24T00:38:49Z",
+          "updatedAt": "2026-05-24T00:39:34Z",
+          "pushedAt": "2026-05-24T00:39:31Z",
+          "license": {
+            "key": "mit",
+            "name": "MIT License",
+            "spdxId": "MIT",
+            "url": "https://api.github.com/licenses/mit"
+          }
+        },
+        "defaultBranch": "main",
+        "releases": [],
+        "tags": []
+      },
+      "sources": [
+        {
+          "type": "github-api",
+          "label": "GitHub repository API",
+          "apiEndpoint": "GET /repos/{owner}/{repo}"
+        },
+        {
+          "type": "github-api",
+          "label": "GitHub releases API",
+          "apiEndpoint": "GET /repos/{owner}/{repo}/releases"
+        },
+        {
+          "type": "github-api",
+          "label": "GitHub tags API",
+          "apiEndpoint": "GET /repos/{owner}/{repo}/tags"
+        }
+      ],
+      "findings": [
+        {
+          "id": "repository.default-branch.detected",
+          "title": "Default branch detected",
+          "status": "pass",
+          "severity": "info",
+          "summary": "Default branch is main.",
+          "source": {
+            "type": "github-api",
+            "label": "GitHub repository API",
+            "apiEndpoint": "GET /repos/{owner}/{repo}"
+          }
+        },
+        {
+          "id": "repository.releases.detected",
+          "title": "Repository releases detected",
+          "status": "unknown",
+          "severity": "info",
+          "summary": "No release records were returned by the GitHub API.",
+          "source": {
+            "type": "github-api",
+            "label": "GitHub releases API",
+            "apiEndpoint": "GET /repos/{owner}/{repo}/releases"
+          }
+        },
+        {
+          "id": "repository.tags.detected",
+          "title": "Repository tags detected",
+          "status": "unknown",
+          "severity": "info",
+          "summary": "No tag records were returned by the GitHub API.",
+          "source": {
+            "type": "github-api",
+            "label": "GitHub tags API",
+            "apiEndpoint": "GET /repos/{owner}/{repo}/tags"
+          }
+        }
+      ],
+      "errors": []
+    },
+    "branch-protection": {
+      "collector": "branch-protection",
+      "status": "partial",
+      "summary": "Collected branch protection evidence for QuantumNavigator42/trustpack-action-demo@main.",
+      "data": {
+        "repository": {
+          "fullName": "QuantumNavigator42/trustpack-action-demo",
+          "defaultBranch": "main"
+        },
+        "branchProtection": {
+          "state": "unavailable",
+          "branch": "main",
+          "requiredStatusChecks": false,
+          "requiredPullRequestReviews": false
+        },
+        "rulesets": {
+          "state": "none",
+          "items": []
+        }
+      },
+      "sources": [
+        {
+          "type": "github-api",
+          "label": "GitHub branch protection API",
+          "apiEndpoint": "GET /repos/{owner}/{repo}/branches/{branch}/protection"
+        },
+        {
+          "type": "github-api",
+          "label": "GitHub repository rulesets API",
+          "apiEndpoint": "GET /repos/{owner}/{repo}/rulesets"
+        }
+      ],
+      "findings": [
+        {
+          "id": "branch-protection.default-branch",
+          "title": "Default branch protection",
+          "status": "unknown",
+          "severity": "medium",
+          "summary": "Branch protection could not be collected for main.",
+          "source": {
+            "type": "github-api",
+            "label": "GitHub branch protection API",
+            "apiEndpoint": "GET /repos/{owner}/{repo}/branches/{branch}/protection"
+          },
+          "remediation": "Configure branch protection or repository rulesets for the default branch."
+        },
+        {
+          "id": "branch-protection.repository-rulesets",
+          "title": "Repository rulesets",
+          "status": "unknown",
+          "severity": "info",
+          "summary": "No repository rulesets were returned by the GitHub API.",
+          "source": {
+            "type": "github-api",
+            "label": "GitHub repository rulesets API",
+            "apiEndpoint": "GET /repos/{owner}/{repo}/rulesets"
+          },
+          "remediation": "Consider repository rulesets if branch protection is not sufficient."
+        }
+      ],
+      "errors": [
+        {
+          "message": "Unable to collect branch protection. Resource not accessible by integration - https://docs.github.com/rest/branches/branch-protection#get-branch-protection",
+          "source": {
+            "type": "github-api",
+            "label": "GitHub branch protection API",
+            "apiEndpoint": "GET /repos/{owner}/{repo}/branches/{branch}/protection"
+          }
+        }
+      ]
+    },
+    "repository-files": {
+      "collector": "repository-files",
+      "status": "success",
+      "summary": "Detected 5 of 5 expected repository file evidence item(s).",
+      "data": {
+        "files": [
+          {
+            "kind": "codeowners",
+            "label": "CODEOWNERS",
+            "status": "present",
+            "path": ".github/CODEOWNERS",
+            "candidates": [
+              ".github/CODEOWNERS",
+              "CODEOWNERS",
+              "docs/CODEOWNERS"
+            ]
+          },
+          {
+            "kind": "security",
+            "label": "SECURITY.md",
+            "status": "present",
+            "path": "SECURITY.md",
+            "candidates": [
+              "SECURITY.md",
+              ".github/SECURITY.md",
+              "docs/SECURITY.md"
+            ]
+          },
+          {
+            "kind": "dependabot",
+            "label": "Dependabot configuration",
+            "status": "present",
+            "path": ".github/dependabot.yml",
+            "candidates": [
+              ".github/dependabot.yml",
+              ".github/dependabot.yaml"
+            ]
+          },
+          {
+            "kind": "readme",
+            "label": "README",
+            "status": "present",
+            "path": "README.md",
+            "candidates": [
+              "README.md",
+              "README",
+              "README.txt",
+              "README.rst"
+            ]
+          },
+          {
+            "kind": "license",
+            "label": "License file",
+            "status": "present",
+            "path": "LICENSE",
+            "candidates": [
+              "LICENSE",
+              "LICENSE.md",
+              "LICENSE.txt",
+              "COPYING",
+              "COPYING.md"
+            ]
+          }
+        ]
+      },
+      "sources": [
+        {
+          "type": "repository-file",
+          "label": "CODEOWNERS",
+          "path": ".github/CODEOWNERS"
+        },
+        {
+          "type": "repository-file",
+          "label": "SECURITY.md",
+          "path": "SECURITY.md"
+        },
+        {
+          "type": "repository-file",
+          "label": "Dependabot configuration",
+          "path": ".github/dependabot.yml"
+        },
+        {
+          "type": "repository-file",
+          "label": "README",
+          "path": "README.md"
+        },
+        {
+          "type": "repository-file",
+          "label": "License file",
+          "path": "LICENSE"
+        }
+      ],
+      "findings": [
+        {
+          "id": "repository-files.codeowners",
+          "title": "CODEOWNERS detected",
+          "status": "pass",
+          "severity": "info",
+          "summary": "CODEOWNERS found at .github/CODEOWNERS.",
+          "source": {
+            "type": "repository-file",
+            "label": "CODEOWNERS",
+            "path": ".github/CODEOWNERS"
+          }
+        },
+        {
+          "id": "repository-files.security",
+          "title": "SECURITY.md detected",
+          "status": "pass",
+          "severity": "info",
+          "summary": "SECURITY.md found at SECURITY.md.",
+          "source": {
+            "type": "repository-file",
+            "label": "SECURITY.md",
+            "path": "SECURITY.md"
+          }
+        },
+        {
+          "id": "repository-files.dependabot",
+          "title": "Dependabot configuration detected",
+          "status": "pass",
+          "severity": "info",
+          "summary": "Dependabot configuration found at .github/dependabot.yml.",
+          "source": {
+            "type": "repository-file",
+            "label": "Dependabot configuration",
+            "path": ".github/dependabot.yml"
+          }
+        },
+        {
+          "id": "repository-files.readme",
+          "title": "README detected",
+          "status": "pass",
+          "severity": "info",
+          "summary": "README found at README.md.",
+          "source": {
+            "type": "repository-file",
+            "label": "README",
+            "path": "README.md"
+          }
+        },
+        {
+          "id": "repository-files.license",
+          "title": "License file detected",
+          "status": "pass",
+          "severity": "info",
+          "summary": "License file found at LICENSE.",
+          "source": {
+            "type": "repository-file",
+            "label": "License file",
+            "path": "LICENSE"
+          }
+        }
+      ],
+      "errors": []
+    },
+    "dependencies": {
+      "collector": "dependencies",
+      "status": "success",
+      "summary": "Detected 1 dependency file(s) across 1 ecosystem(s).",
+      "data": {
+        "files": [
+          {
+            "ecosystem": "node",
+            "role": "manifest",
+            "path": "package.json",
+            "packageManager": "npm"
+          }
+        ],
+        "ecosystems": [
+          {
+            "ecosystem": "node",
+            "status": "present",
+            "manifests": [
+              {
+                "ecosystem": "node",
+                "role": "manifest",
+                "path": "package.json",
+                "packageManager": "npm"
+              }
+            ],
+            "lockfiles": []
+          },
+          {
+            "ecosystem": "python",
+            "status": "missing",
+            "manifests": [],
+            "lockfiles": []
+          },
+          {
+            "ecosystem": "go",
+            "status": "missing",
+            "manifests": [],
+            "lockfiles": []
+          },
+          {
+            "ecosystem": "rust",
+            "status": "missing",
+            "manifests": [],
+            "lockfiles": []
+          },
+          {
+            "ecosystem": "maven",
+            "status": "missing",
+            "manifests": [],
+            "lockfiles": []
+          }
+        ]
+      },
+      "sources": [
+        {
+          "type": "manifest",
+          "label": "Node.js manifest",
+          "path": "package.json"
+        }
+      ],
+      "findings": [
+        {
+          "id": "dependencies.node",
+          "title": "Node.js dependency files",
+          "status": "pass",
+          "severity": "info",
+          "summary": "Node.js dependency evidence found: package.json.",
+          "source": {
+            "type": "manifest",
+            "label": "Dependency manifests and lockfiles"
+          }
+        },
+        {
+          "id": "dependencies.python",
+          "title": "Python dependency files",
+          "status": "unknown",
+          "severity": "info",
+          "summary": "Python dependency files were not detected.",
+          "source": {
+            "type": "manifest",
+            "label": "Dependency manifests and lockfiles"
+          }
+        },
+        {
+          "id": "dependencies.go",
+          "title": "Go dependency files",
+          "status": "unknown",
+          "severity": "info",
+          "summary": "Go dependency files were not detected.",
+          "source": {
+            "type": "manifest",
+            "label": "Dependency manifests and lockfiles"
+          }
+        },
+        {
+          "id": "dependencies.rust",
+          "title": "Rust dependency files",
+          "status": "unknown",
+          "severity": "info",
+          "summary": "Rust dependency files were not detected.",
+          "source": {
+            "type": "manifest",
+            "label": "Dependency manifests and lockfiles"
+          }
+        },
+        {
+          "id": "dependencies.maven",
+          "title": "Maven dependency files",
+          "status": "unknown",
+          "severity": "info",
+          "summary": "Maven dependency files were not detected.",
+          "source": {
+            "type": "manifest",
+            "label": "Dependency manifests and lockfiles"
+          }
+        }
+      ],
+      "errors": []
+    },
+    "workflows": {
+      "collector": "workflows",
+      "status": "success",
+      "summary": "Parsed 1 workflow file(s).",
+      "data": {
+        "workflowDirectory": ".github/workflows",
+        "files": [
+          {
+            "path": ".github/workflows/trustpack.yml",
+            "fileName": "trustpack.yml",
+            "state": "parsed",
+            "name": "Generate TrustPack",
+            "triggers": [
+              "workflow_dispatch"
+            ],
+            "jobIds": [
+              "trustpack"
+            ],
+            "permissions": {
+              "contents": "read",
+              "actions": "read",
+              "pull-requests": "read",
+              "security-events": "read"
+            },
+            "jobs": [
+              {
+                "id": "trustpack",
+                "steps": [
+                  {
+                    "index": 1,
+                    "name": "Checkout",
+                    "uses": "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd"
+                  },
+                  {
+                    "index": 2,
+                    "name": "Generate repository security evidence pack",
+                    "uses": "QuantumNavigator42/trustpack-action@v0.1.0"
+                  },
+                  {
+                    "index": 3,
+                    "name": "Upload TrustPack artifact",
+                    "uses": "actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "parseErrors": []
+      },
+      "sources": [
+        {
+          "type": "workflow-file",
+          "label": ".github/workflows/trustpack.yml",
+          "path": ".github/workflows/trustpack.yml"
+        }
+      ],
+      "findings": [
+        {
+          "id": "workflows.files.detected",
+          "title": "GitHub workflow files detected",
+          "status": "pass",
+          "severity": "info",
+          "summary": "1 GitHub workflow file(s) found.",
+          "source": {
+            "type": "workflow-file",
+            "label": "GitHub workflow files",
+            "path": ".github/workflows"
+          }
+        },
+        {
+          "id": "workflows.parse-errors",
+          "title": "Workflow YAML parse errors",
+          "status": "pass",
+          "severity": "info",
+          "summary": "All discovered workflow YAML files parsed successfully.",
+          "source": {
+            "type": "workflow-file",
+            "label": "GitHub workflow files",
+            "path": ".github/workflows"
+          }
+        }
+      ],
+      "errors": []
+    },
+    "workflow-risks": {
+      "collector": "workflow-risks",
+      "status": "success",
+      "summary": "Detected 1 workflow risk finding(s).",
+      "data": {
+        "workflowDirectory": ".github/workflows",
+        "files": [
+          {
+            "path": ".github/workflows/trustpack.yml",
+            "findingIds": [
+              "workflow-risk.unpinned-action.github-workflows-trustpack-yml.trustpack.2.quantumnavigator42-trustpack-action-v0-1-0"
+            ]
+          }
+        ],
+        "riskCount": 1,
+        "severityCounts": {
+          "info": 0,
+          "low": 0,
+          "medium": 1,
+          "high": 0,
+          "critical": 0
+        }
+      },
+      "sources": [
+        {
+          "type": "workflow-file",
+          "label": ".github/workflows/trustpack.yml",
+          "path": ".github/workflows/trustpack.yml"
+        }
+      ],
+      "findings": [
+        {
+          "id": "workflow-risk.unpinned-action.github-workflows-trustpack-yml.trustpack.2.quantumnavigator42-trustpack-action-v0-1-0",
+          "title": "Action reference is not pinned to a commit SHA",
+          "status": "warning",
+          "severity": "medium",
+          "summary": ".github/workflows/trustpack.yml job trustpack step 2 uses QuantumNavigator42/trustpack-action@v0.1.0 without a full commit SHA pin.",
+          "source": {
+            "type": "workflow-file",
+            "label": ".github/workflows/trustpack.yml",
+            "path": ".github/workflows/trustpack.yml"
+          },
+          "remediation": "Pin third-party action references to a full 40-character commit SHA."
+        }
+      ],
+      "errors": []
+    }
+  },
+  "findings": [
+    {
+      "id": "workflow-risk.unpinned-action.github-workflows-trustpack-yml.trustpack.2.quantumnavigator42-trustpack-action-v0-1-0",
+      "title": "Action reference is not pinned to a commit SHA",
+      "status": "warning",
+      "severity": "medium",
+      "summary": ".github/workflows/trustpack.yml job trustpack step 2 uses QuantumNavigator42/trustpack-action@v0.1.0 without a full commit SHA pin.",
+      "source": {
+        "type": "workflow-file",
+        "label": ".github/workflows/trustpack.yml",
+        "path": ".github/workflows/trustpack.yml"
+      },
+      "remediation": "Pin third-party action references to a full 40-character commit SHA."
+    },
+    {
+      "id": "branch-protection.default-branch",
+      "title": "Default branch protection",
+      "status": "unknown",
+      "severity": "medium",
+      "summary": "Branch protection could not be collected for main.",
+      "source": {
+        "type": "github-api",
+        "label": "GitHub branch protection API",
+        "apiEndpoint": "GET /repos/{owner}/{repo}/branches/{branch}/protection"
+      },
+      "remediation": "Configure branch protection or repository rulesets for the default branch."
+    },
+    {
+      "id": "branch-protection.repository-rulesets",
+      "title": "Repository rulesets",
+      "status": "unknown",
+      "severity": "info",
+      "summary": "No repository rulesets were returned by the GitHub API.",
+      "source": {
+        "type": "github-api",
+        "label": "GitHub repository rulesets API",
+        "apiEndpoint": "GET /repos/{owner}/{repo}/rulesets"
+      },
+      "remediation": "Consider repository rulesets if branch protection is not sufficient."
+    },
+    {
+      "id": "dependencies.go",
+      "title": "Go dependency files",
+      "status": "unknown",
+      "severity": "info",
+      "summary": "Go dependency files were not detected.",
+      "source": {
+        "type": "manifest",
+        "label": "Dependency manifests and lockfiles"
+      }
+    },
+    {
+      "id": "dependencies.maven",
+      "title": "Maven dependency files",
+      "status": "unknown",
+      "severity": "info",
+      "summary": "Maven dependency files were not detected.",
+      "source": {
+        "type": "manifest",
+        "label": "Dependency manifests and lockfiles"
+      }
+    },
+    {
+      "id": "dependencies.python",
+      "title": "Python dependency files",
+      "status": "unknown",
+      "severity": "info",
+      "summary": "Python dependency files were not detected.",
+      "source": {
+        "type": "manifest",
+        "label": "Dependency manifests and lockfiles"
+      }
+    },
+    {
+      "id": "dependencies.rust",
+      "title": "Rust dependency files",
+      "status": "unknown",
+      "severity": "info",
+      "summary": "Rust dependency files were not detected.",
+      "source": {
+        "type": "manifest",
+        "label": "Dependency manifests and lockfiles"
+      }
+    },
+    {
+      "id": "repository.releases.detected",
+      "title": "Repository releases detected",
+      "status": "unknown",
+      "severity": "info",
+      "summary": "No release records were returned by the GitHub API.",
+      "source": {
+        "type": "github-api",
+        "label": "GitHub releases API",
+        "apiEndpoint": "GET /repos/{owner}/{repo}/releases"
+      }
+    },
+    {
+      "id": "repository.tags.detected",
+      "title": "Repository tags detected",
+      "status": "unknown",
+      "severity": "info",
+      "summary": "No tag records were returned by the GitHub API.",
+      "source": {
+        "type": "github-api",
+        "label": "GitHub tags API",
+        "apiEndpoint": "GET /repos/{owner}/{repo}/tags"
+      }
+    },
+    {
+      "id": "dependencies.node",
+      "title": "Node.js dependency files",
+      "status": "pass",
+      "severity": "info",
+      "summary": "Node.js dependency evidence found: package.json.",
+      "source": {
+        "type": "manifest",
+        "label": "Dependency manifests and lockfiles"
+      }
+    },
+    {
+      "id": "repository-files.codeowners",
+      "title": "CODEOWNERS detected",
+      "status": "pass",
+      "severity": "info",
+      "summary": "CODEOWNERS found at .github/CODEOWNERS.",
+      "source": {
+        "type": "repository-file",
+        "label": "CODEOWNERS",
+        "path": ".github/CODEOWNERS"
+      }
+    },
+    {
+      "id": "repository-files.dependabot",
+      "title": "Dependabot configuration detected",
+      "status": "pass",
+      "severity": "info",
+      "summary": "Dependabot configuration found at .github/dependabot.yml.",
+      "source": {
+        "type": "repository-file",
+        "label": "Dependabot configuration",
+        "path": ".github/dependabot.yml"
+      }
+    },
+    {
+      "id": "repository-files.license",
+      "title": "License file detected",
+      "status": "pass",
+      "severity": "info",
+      "summary": "License file found at LICENSE.",
+      "source": {
+        "type": "repository-file",
+        "label": "License file",
+        "path": "LICENSE"
+      }
+    },
+    {
+      "id": "repository-files.readme",
+      "title": "README detected",
+      "status": "pass",
+      "severity": "info",
+      "summary": "README found at README.md.",
+      "source": {
+        "type": "repository-file",
+        "label": "README",
+        "path": "README.md"
+      }
+    },
+    {
+      "id": "repository-files.security",
+      "title": "SECURITY.md detected",
+      "status": "pass",
+      "severity": "info",
+      "summary": "SECURITY.md found at SECURITY.md.",
+      "source": {
+        "type": "repository-file",
+        "label": "SECURITY.md",
+        "path": "SECURITY.md"
+      }
+    },
+    {
+      "id": "repository.default-branch.detected",
+      "title": "Default branch detected",
+      "status": "pass",
+      "severity": "info",
+      "summary": "Default branch is main.",
+      "source": {
+        "type": "github-api",
+        "label": "GitHub repository API",
+        "apiEndpoint": "GET /repos/{owner}/{repo}"
+      }
+    },
+    {
+      "id": "workflows.files.detected",
+      "title": "GitHub workflow files detected",
+      "status": "pass",
+      "severity": "info",
+      "summary": "1 GitHub workflow file(s) found.",
+      "source": {
+        "type": "workflow-file",
+        "label": "GitHub workflow files",
+        "path": ".github/workflows"
+      }
+    },
+    {
+      "id": "workflows.parse-errors",
+      "title": "Workflow YAML parse errors",
+      "status": "pass",
+      "severity": "info",
+      "summary": "All discovered workflow YAML files parsed successfully.",
+      "source": {
+        "type": "workflow-file",
+        "label": "GitHub workflow files",
+        "path": ".github/workflows"
+      }
+    }
+  ],
+  "generatedReports": [
+    {
+      "fileName": "executive-summary.md",
+      "format": "markdown"
+    },
+    {
+      "fileName": "security-controls.md",
+      "format": "markdown"
+    },
+    {
+      "fileName": "vendor-security-questionnaire.md",
+      "format": "markdown"
+    },
+    {
+      "fileName": "dependency-inventory.md",
+      "format": "markdown"
+    },
+    {
+      "fileName": "open-source-license-notices.md",
+      "format": "markdown"
+    },
+    {
+      "fileName": "github-actions-risk-report.md",
+      "format": "markdown"
+    },
+    {
+      "fileName": "remediation-checklist.md",
+      "format": "markdown"
+    },
+    {
+      "fileName": "repository-evidence.json",
+      "format": "json"
+    },
+    {
+      "fileName": "index.html",
+      "format": "html"
+    }
+  ],
+  "disclaimer": "TrustPack helps collect repository-level security evidence. It is not legal, audit, or compliance certification."
+}
