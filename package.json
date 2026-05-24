@@ -1,0 +1,10 @@
+{
+  "name": "trustpack-action-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Demo repository for TrustPack Action.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node -e \"console.log('demo tests pass')\""
+  }
+}
